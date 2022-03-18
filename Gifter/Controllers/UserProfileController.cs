@@ -17,14 +17,15 @@ namespace Gifter.Controllers
         {
             _userProfileRepository = userProfileRepository;
         }
+
         // GET: api/<UserProfileController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(_userProfileRepository.GetAll());
         }
 
-        [HttpGet]
+        [HttpGet("GetByEmail")]
         public IActionResult GetByEmail(string email)
         {
             var user = _userProfileRepository.GetByEmail(email);

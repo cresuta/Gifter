@@ -64,6 +64,8 @@ namespace Gifter
             {
                 endpoints.MapControllers();
             });
+
+            app.UseDeveloperExceptionPage();
         }
     }
 }
